@@ -5,83 +5,67 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 13:40:29 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/19 15:56:00 by axelgerv         ###   ########.fr       */
+/*   Created: 2018/11/20 16:55:13 by axelgerv          #+#    #+#             */
+/*   Updated: 2018/11/20 17:01:06 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_words(char *str, char c)
+int		ft_count_words(char const *s, char c)
 {
 	int i;
-	int count;
+	int words;
 
 	i = 0;
-	count = 0;
-	while (str[i])
+	words = 0;
+	while (s[i])
 	{
-		if (str[i] != c)
-			count = count + 1;
-		while (str[i + 1] && str[i] != c)
+		if (s[i] != c)
+			words++;
+		while (s[i + 1] && s[i] != c)
 			i++;
 		i++;
 	}
-	return (count);
+	return (words);
 }
 
-int		ft_count_in_words(char *str, char c)
+int		ft_wordlen(char const *s, char c)
 {
 	int i;
 	int len;
 
 	i = 0;
 	len = 0;
-	while (str[i] == c)
-		i++;
-	while (str[i] && str[i] != c)
+	while (s[len] && s[len] != c)
 	{
 		len++;
-		i++;
 	}
 	return (len);
 }
 
-char	**ft_fillit(char **tab, int words, char const *s, char c)
-{
-	int i;
-	int j;
-	int k;
-
-	i = 0;
-	k = 0;
-	while (k < words)
-	{
-		j = 0;
-		if (!(tab[k] = (char *)malloc(sizeof(char) *
-						(ft_count_in_words((char *)s, c) + 1))))
-			return (0);
-		while (s[i] == c)
-			i++;
-		while (s[i] && s[i] != c)
-			tab[k][j++] = s[i++];
-		tab[k][j] = '\0';
-		k++;
-	}
-	tab[k] = 0;
-	return (tab);
-}
-
 char	**ft_strsplit(char const *s, char c)
 {
-	if (!s)
-		return (NULL);
 	char	**tab;
 	int		words;
+	int		i;
 
-	words = ft_count_words((char *)s, c);
-	if (!(tab = (char**)malloc(sizeof(char*) * (words + 1))))
-		return (0);
-	ft_fillit(tab, words, s, c);
+	if (!s)
+		return (NULL);
+	i = 0;
+	words = ft_count_words(s, c);
+	if (!(tab = (char **)malloc(sizeof(char *) * (words + 1))))
+		return (NULL);
+	while (i < words)
+	{
+		while (*s && *s == c)
+			s++;
+		if (!(tab[i] = (char *)malloc(sizeof(char) * (ft_wordlen(s, c) + 1))))
+			return (NULL);
+		tab[i] = ft_strsub(s, 0, ft_wordlen(s, c));
+		s += ft_wordlen(s, c);
+		i++;
+	}
+	tab[i] = 0;
 	return (tab);
 }
