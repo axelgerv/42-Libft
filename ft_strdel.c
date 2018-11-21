@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 18:06:34 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/15 18:08:55 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/11/21 15:16:00 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void	ft_strdel(char **as)
 {
-	if (as == NULL)
-		return ;
-	*as = NULL;
+	if (as)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

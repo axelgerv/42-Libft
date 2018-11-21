@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 16:27:36 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/19 17:28:15 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/11/21 16:34:42 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,5 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	**ft_strsplit(char const *s, char c);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
-
+char	*ft_itoa(int n);
 #endif
