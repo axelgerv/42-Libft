@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 18:11:44 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/21 17:36:32 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/11/22 09:42:02 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 static	int		ft_getlen(int n)
 {
 	int				len;
-	unsigned int	i;
+	unsigned int	nb;
 
 	len = 0;
 	if (n < 0)
-		i = -n;
+		nb = -n;
 	else
-		i = n;
-	while (i >= 10)
+		nb = n;
+	while (nb >= 10)
 	{
 		len++;
-		i /= 10;
+		nb /= 10;
 	}
 	return (len + 1);
 }

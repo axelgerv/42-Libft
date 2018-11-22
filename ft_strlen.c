@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 10:22:51 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/13 10:32:41 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/11/22 12:18:48 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int len;
+	size_t len;
 
 	len = 0;
 	while (s[len])
 		len++;
-	return ((size_t)len);
+	return (len);
 }

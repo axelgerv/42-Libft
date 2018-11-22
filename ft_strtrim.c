@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 17:36:29 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/19 15:54:53 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/11/22 12:21:36 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strtrim(char const *s)
 	size_t	len;
 	size_t	size;
 
-	i = 0;
 	if (!s)
 		return (NULL);
+	i = 0;
 	size = ft_strlen(s);
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 	{
