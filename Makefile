@@ -6,7 +6,7 @@
 #    By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/09 14:12:19 by axelgerv          #+#    #+#              #
-#    Updated: 2018/11/21 16:34:00 by axelgerv         ###   ########.fr        #
+#    Updated: 2018/11/23 17:10:10 by axelgerv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,9 @@ SRCS = ft_putchar.c \
 	   ft_strtrim.c \
 	   ft_strsplit.c \
 	   ft_strlcat.c \
-	   ft_itoa.c
+	   ft_itoa.c \
+	   ft_lstnew.c \
+	   ft_lstdelone.c
 
 OFILES = ft_putchar.o \
 		 ft_putstr.o \
@@ -116,7 +118,9 @@ OFILES = ft_putchar.o \
 		 ft_strtrim.o \
 		 ft_strsplit.o \
 		 ft_strlcat.o \
-		 ft_itoa.o
+		 ft_itoa.o \
+		 ft_lstnew.o \
+		 ft_lstdelone.o
 
 FLAGS = -Wall -Werror -Wextra
 

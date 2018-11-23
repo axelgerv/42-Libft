@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 17:07:26 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/23 15:01:51 by axelgerv         ###   ########.fr       */
+/*   Created: 2018/11/23 16:51:57 by axelgerv          #+#    #+#             */
+/*   Updated: 2018/11/23 17:11:00 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	if (ap)
-	{
-		free(*ap);
-		*ap = NULL;
-	}
+	(*del)((*alst)->content, (*alst)->content_size);
+	ft_memdel((void **)alst);
 }
