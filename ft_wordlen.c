@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_wordlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 10:11:35 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/28 12:19:54 by axelgerv         ###   ########.fr       */
+/*   Created: 2018/11/27 18:21:42 by axelgerv          #+#    #+#             */
+/*   Updated: 2018/11/27 18:22:15 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstadd(t_list **alst, t_list *new)
+int		ft_wordlen(char const *s, char c)
 {
-	if (!(alst))
-		*alst = new;
-	else
-	{
-		new->next = *alst;
-		*alst = new;
-	}
+	int len;
+
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
 }

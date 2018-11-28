@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 10:11:35 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/28 12:19:54 by axelgerv         ###   ########.fr       */
+/*   Created: 2018/11/27 17:51:27 by axelgerv          #+#    #+#             */
+/*   Updated: 2018/11/27 17:51:53 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_print_words_tables(char **tab)
 {
-	if (!(alst))
-		*alst = new;
-	else
+	int i;
+	int j;
+
+	j = 0;
+	while (tab[j])
 	{
-		new->next = *alst;
-		*alst = new;
+		i = 0;
+		while (tab[j][i])
+		{
+			ft_putchar(tab[j][i]);
+			i++;
+		}
+		ft_putchar('\n');
+		j++;
 	}
 }

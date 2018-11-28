@@ -6,16 +6,15 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 18:18:30 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/15 18:40:01 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/11/27 17:26:39 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (!s || !f)
-		return ;
-	while (*s)
-		(*f)(s++);
+	if (s && f)
+	{
+		while (*s)
+			(*f)(s++);
+	}
 }

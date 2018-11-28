@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 13:00:57 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/23 16:50:50 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/11/27 15:32:28 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		if (!(element->content = (void *)ft_memalloc(content_size)))
 		{
-			ft_memdel((void **)element);
+			free(element);
 			return (NULL);
 		}
 		ft_memmove(element->content, content, content_size);

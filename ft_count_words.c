@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 10:11:35 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/28 12:19:54 by axelgerv         ###   ########.fr       */
+/*   Created: 2018/11/27 18:23:21 by axelgerv          #+#    #+#             */
+/*   Updated: 2018/11/27 18:23:48 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstadd(t_list **alst, t_list *new)
+int		ft_count_words(char const *s, char c)
 {
-	if (!(alst))
-		*alst = new;
-	else
+	int i;
+	int words;
+
+	i = 0;
+	words = 0;
+	while (s[i])
 	{
-		new->next = *alst;
-		*alst = new;
+		if (s[i] != c)
+			words++;
+		while (s[i + 1] && s[i] != c)
+			i++;
+		i++;
 	}
+	return (words);
 }

@@ -6,41 +6,11 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/20 16:55:13 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/21 16:30:32 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/11/27 18:24:44 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int		ft_count_words(char const *s, char c)
-{
-	int i;
-	int words;
-
-	i = 0;
-	words = 0;
-	while (s[i])
-	{
-		if (s[i] != c)
-			words++;
-		while (s[i + 1] && s[i] != c)
-			i++;
-		i++;
-	}
-	return (words);
-}
-
-static int		ft_wordlen(char const *s, char c)
-{
-	int len;
-
-	len = 0;
-	while (s[len] && s[len] != c)
-	{
-		len++;
-	}
-	return (len);
-}
 
 static void		ft_clean(char **tab, int delcount)
 {

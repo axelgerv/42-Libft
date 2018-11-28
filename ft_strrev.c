@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 10:11:35 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/28 12:19:54 by axelgerv         ###   ########.fr       */
+/*   Created: 2018/11/27 18:13:27 by axelgerv          #+#    #+#             */
+/*   Updated: 2018/11/27 18:22:53 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstadd(t_list **alst, t_list *new)
+char	*ft_strrev(char *str)
 {
-	if (!(alst))
-		*alst = new;
-	else
+	int		i;
+	int		len;
+	char	c;
+
+	i = 0;
+	len = 0;
+	while (str[len])
+		len++;
+	len--;
+	while (i <= len)
 	{
-		new->next = *alst;
-		*alst = new;
+		c = str[i];
+		str[i] = str[len];
+		str[len] = c;
+		i++;
+		len--;
 	}
+	return (str);
 }

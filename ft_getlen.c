@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_getlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 10:11:35 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/28 12:19:54 by axelgerv         ###   ########.fr       */
+/*   Created: 2018/11/27 18:25:09 by axelgerv          #+#    #+#             */
+/*   Updated: 2018/11/27 18:25:34 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstadd(t_list **alst, t_list *new)
+int		ft_getlen(int n)
 {
-	if (!(alst))
-		*alst = new;
+	int				len;
+	unsigned int	nb;
+
+	len = 0;
+	if (n < 0)
+		nb = -n;
 	else
+		nb = n;
+	while (nb >= 10)
 	{
-		new->next = *alst;
-		*alst = new;
+		len++;
+		nb /= 10;
 	}
+	return (len + 1);
 }
