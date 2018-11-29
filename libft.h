@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 16:27:36 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/27 18:29:12 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/11/29 11:28:34 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ void				ft_print_words_tables(char **tab);
 char				*ft_strrev(char *str);
 int					ft_count_words(char const *s, char c);
 int					ft_getlen(int n);
+void				ft_lstadd_back(t_list **alst, t_list *new);
 
 #endif

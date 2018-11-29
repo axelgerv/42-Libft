@@ -6,7 +6,7 @@
 #    By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/09 14:12:19 by axelgerv          #+#    #+#              #
-#    Updated: 2018/11/27 18:30:58 by axelgerv         ###   ########.fr        #
+#    Updated: 2018/11/29 11:29:55 by axelgerv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,8 @@ SRCS = ft_putchar.c \
 	   ft_print_words_tables.c \
 	   ft_strrev.c \
 	   ft_count_words.c \
-	   ft_getlen.c
+	   ft_getlen.c \
+	   ft_lstadd_back.c
 
 OFILES = $(SRCS:.c=.o)
 
