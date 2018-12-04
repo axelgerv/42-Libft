@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 10:48:51 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/26 10:55:25 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/12/04 17:36:52 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
+	if (!lst || !f)
+		return ;
 	while (lst)
 	{
 		(*f)(lst);
