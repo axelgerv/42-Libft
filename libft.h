@@ -6,15 +6,13 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 16:27:36 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/11/29 11:28:34 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/12/04 15:48:41 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
-# include <stdlib.h>
 # include <string.h>
 
 typedef	struct		s_list
@@ -82,11 +80,11 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-int					ft_wordlen(char const *s, char c);
 void				ft_print_words_tables(char **tab);
 char				*ft_strrev(char *str);
-int					ft_count_words(char const *s, char c);
-int					ft_getlen(int n);
 void				ft_lstadd_back(t_list **alst, t_list *new);
+void				ft_swap(int *a, int *b);
+int					ft_sqrt(int nb);
+char				*ft_strctrim(char const *s, char c);
 
 #endif

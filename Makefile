@@ -6,7 +6,7 @@
 #    By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/09 14:12:19 by axelgerv          #+#    #+#              #
-#    Updated: 2018/11/29 11:29:55 by axelgerv         ###   ########.fr        #
+#    Updated: 2018/12/04 15:49:08 by axelgerv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,12 +75,12 @@ SRCS = ft_putchar.c \
 	   ft_lstadd.c \
 	   ft_lstiter.c \
 	   ft_lstmap.c \
-	   ft_wordlen.c \
 	   ft_print_words_tables.c \
 	   ft_strrev.c \
-	   ft_count_words.c \
-	   ft_getlen.c \
-	   ft_lstadd_back.c
+	   ft_lstadd_back.c \
+	   ft_sqrt.c \
+	   ft_swap.c \
+	   ft_strctrim.c
 
 OFILES = $(SRCS:.c=.o)
 
@@ -88,18 +88,18 @@ FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME):
-	gcc -c $(FLAGS) -I. $(SRCS)
-	ar rc $(NAME) $(OFILES)
-	ranlib $(NAME)
+$(NAME): $(OFILES)
+	@gcc -c $(FLAGS) -I. $(SRCS)
+	@ar rc $(NAME) $(OFILES)
+	@ranlib $(NAME)
 	@echo "[Libft] | Compilation					$(OK)"
 
 clean:
-	rm -f $(OFILES)
+	@rm -f $(OFILES)
 	@echo "[Libft] | Clean							$(OK)"
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 	@echo "[Libft] | Full clean						$(OK)"
 
 re: fclean all

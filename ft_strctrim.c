@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strctrim.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 14:06:48 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/12/04 14:54:38 by axelgerv         ###   ########.fr       */
+/*   Created: 2018/12/04 15:42:37 by axelgerv          #+#    #+#             */
+/*   Updated: 2018/12/04 15:47:59 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strctrim(char const *s, char c)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	len;
+	size_t	size;
 
+	if (!s)
+		return (NULL);
 	i = 0;
-	j = 0;
-	while (dst[i] && i < size)
-		i++;
-	while (src[j] && (i + j + 1) < size)
+	size = ft_strlen(s);
+	while (s[i] == c)
 	{
-		dst[i + j] = src[j];
-		j++;
+		i++;
+		size--;
 	}
-	if (i < size)
-		dst[i + j] = '\0';
-	return (i + ft_strlen(src));
+	if (!s[i])
+		return (ft_strdup(""));
+	len = ft_strlen(s) - 1;
+	while (s[len] == c && len > 0)
+	{
+		len--;
+		size--;
+	}
+	if (size == ft_strlen(s))
+		return (ft_strdup(s));
+	return (ft_strsub(s, i, size));
 }

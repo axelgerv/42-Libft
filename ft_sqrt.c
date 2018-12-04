@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/19 14:06:48 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/12/04 14:54:38 by axelgerv         ###   ########.fr       */
+/*   Created: 2018/12/04 12:17:42 by axelgerv          #+#    #+#             */
+/*   Updated: 2018/12/04 12:18:47 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int		ft_sqrt(int nb)
 {
-	size_t i;
-	size_t j;
+	int racine;
+	int sqrt;
 
-	i = 0;
-	j = 0;
-	while (dst[i] && i < size)
-		i++;
-	while (src[j] && (i + j + 1) < size)
+	racine = 1;
+	sqrt = 0;
+	if (nb <= 0)
+		return (0);
+	if (nb == 1)
+		return (1);
+	while (racine <= nb / 2)
 	{
-		dst[i + j] = src[j];
-		j++;
+		sqrt = racine * racine;
+		if (nb == sqrt)
+			return (racine);
+		racine++;
 	}
-	if (i < size)
-		dst[i + j] = '\0';
-	return (i + ft_strlen(src));
+	return (0);
 }
