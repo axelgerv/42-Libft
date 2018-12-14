@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 16:27:36 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/12/04 15:48:41 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/12/14 20:11:13 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ void				ft_lstadd_back(t_list **alst, t_list *new);
 void				ft_swap(int *a, int *b);
 int					ft_sqrt(int nb);
 char				*ft_strctrim(char const *s, char c);
+char				*ft_strjoinf(char **s1, char **s2, int flag);
 
 #endif
