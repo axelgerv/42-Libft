@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 14:55:00 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/12/18 14:57:07 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/12/18 15:00:22 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ static int		storage(t_data **head, char **line, int fd)
 		return (-1);
 	if (rest)
 	{
-		element->str = ft_strdup(rest + 1);
+		if (!(element->str = ft_strdup(rest + 1)))
+			return (-1);
 		ft_strdel(&str);
 	}
 	else
