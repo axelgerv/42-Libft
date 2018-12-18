@@ -6,7 +6,7 @@
 #    By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/09 14:12:19 by axelgerv          #+#    #+#              #
-#    Updated: 2018/12/14 20:10:01 by axelgerv         ###   ########.fr        #
+#    Updated: 2018/12/18 14:51:27 by axelgerv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,8 @@ SRCS = ft_putchar.c \
 	   ft_sqrt.c \
 	   ft_swap.c \
 	   ft_strctrim.c \
-	   ft_strjoinf.c
+	   ft_strjoinf.c \
+	   get_next_line.c
 
 OFILES = $(SRCS:.c=.o)
 

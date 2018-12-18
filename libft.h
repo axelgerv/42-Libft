@@ -6,7 +6,7 @@
 /*   By: axelgerv <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 16:27:36 by axelgerv          #+#    #+#             */
-/*   Updated: 2018/12/14 20:11:13 by axelgerv         ###   ########.fr       */
+/*   Updated: 2018/12/18 14:54:18 by axelgerv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 # define LIBFT_H
 
 # include <string.h>
+
+# define BUFF_SIZE 32
+
+typedef	struct		s_data
+{
+	char			*str;
+	int				fd;
+	struct s_data	*next;
+}					t_data;
 
 typedef	struct		s_list
 {
@@ -87,5 +96,6 @@ void				ft_swap(int *a, int *b);
 int					ft_sqrt(int nb);
 char				*ft_strctrim(char const *s, char c);
 char				*ft_strjoinf(char **s1, char **s2, int flag);
+int					get_next_line(const int fd, char **line);
 
 #endif
